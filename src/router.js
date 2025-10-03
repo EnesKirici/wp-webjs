@@ -45,6 +45,7 @@ export async function handleMessage(message) {
     const context = getContext(chatId);
 
     log.info(`Processing message from ${chatId}`, {
+      message: userMessage,
       messageLength: userMessage.length,
       contextLength: context.length,
     });
@@ -59,6 +60,7 @@ export async function handleMessage(message) {
     addToMemory(chatId, 'assistant', aiResponse);
 
     log.info(`Response sent to ${chatId}`, {
+      response: aiResponse,
       responseLength: aiResponse.length,
     });
 
