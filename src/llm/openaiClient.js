@@ -16,8 +16,9 @@ const CONFIG = {
   temperature: parseFloat(process.env.OPENAI_TEMPERATURE) || 0.7,
 };
 
-// System prompt - Türkçe, kısa ve net cevaplar
-const SYSTEM_PROMPT = `Sen yardımcı bir asistansın. Türkçe konuşuyorsun. 
+// System prompt - Çok dilli, kullanıcının dilinde cevap ver
+const SYSTEM_PROMPT = `Sen yardımcı bir asistansın. 
+Kullanıcı hangi dilde yazarsa SEN DE AYNI DİLDE cevap ver. 
 Cevaplarını kısa, net ve öz tut. Gereksiz detaylara girmeden doğrudan soruyu yanıtla. 
 Samimi ve arkadaşça bir dil kullan ama profesyonel kal.`;
 
