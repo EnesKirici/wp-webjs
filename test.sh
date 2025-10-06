@@ -4,8 +4,8 @@
 # Kullanım: chmod +x test.sh && ./test.sh
 
 API_URL="http://localhost:3000"
-API_KEY="whatsapp_web_ms_security_key345569!*!/!"  # .env dosyasındaki API_KEY ile aynı olmalı
-PHONE="905538602004"  # Test için kendi numaranızı yazın
+API_KEY="#"  # .env dosyasındaki API_KEY ile aynı olmalı
+PHONE="#"  # Test için kendi numaranızı yazın
 
 echo ""
 echo "========================================"

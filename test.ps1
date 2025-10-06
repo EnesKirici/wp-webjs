@@ -2,8 +2,8 @@
 # Kullanim: .\test.ps1
 
 $API_URL = "http://localhost:3000"
-$API_KEY = "whatsapp_web_ms_security_key345569!*!/!"
-$PHONE = "905538602004"
+$API_KEY = "#"
+$PHONE = "#"
 
 Write-Host ""
 Write-Host "========================================" -ForegroundColor Cyan

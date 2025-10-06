@@ -194,7 +194,7 @@ curl http://localhost:3000/api/health
 ```bash
 curl -X POST http://localhost:3000/api/send \
   -H "Content-Type: application/json" \
-  -H "x-api-key: gizli_anahtar_buraya" \
+  -H "x-api-key: #" \
   -d '{
     "phone": "905551234567",
     "message": "Merhaba! Bu bir test mesajıdır."
@@ -206,7 +206,7 @@ curl -X POST http://localhost:3000/api/send \
 ```powershell
 $headers = @{
     "Content-Type" = "application/json"
-    "x-api-key" = "gizli_anahtar_buraya"
+    "x-api-key" = "#"
 }
 
 $body = @{
@@ -222,7 +222,7 @@ Invoke-RestMethod -Uri "http://localhost:3000/api/send" -Method Post -Headers $h
 1. **Method:** POST
 2. **URL:** `http://localhost:3000/api/send`
 3. **Headers:**
-   - Key: `x-api-key`, Value: `gizli_anahtar_buraya`
+   - Key: `x-api-key`, Value: `#`
    - Key: `Content-Type`, Value: `application/json`
 4. **Body (raw JSON):**
    ```json
