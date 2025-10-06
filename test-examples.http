@@ -1,0 +1,111 @@
+### WhatsApp API Test Örnekleri
+### Bu dosyayı VS Code REST Client eklentisi ile kullanabilirsiniz
+
+### Değişkenler
+@baseUrl = http://localhost:3000
+@apiKey = degistir
+
+### 1. Health Check - Servis Durumu
+GET {{baseUrl}}/api/health
+
+###
+
+### 2. Ana Sayfa - API Bilgileri
+GET {{baseUrl}}/
+
+###
+
+### 3. Mesaj Gönderme - Başarılı
+POST {{baseUrl}}/api/send
+Content-Type: application/json
+x-api-key: {{apiKey}}
+
+{
+  "phone": "905551234567",
+  "message": "Merhaba! Bu bir test mesajıdır."
+}
+
+###
+
+### 4. Mesaj Gönderme - Uzun Mesaj
+POST {{baseUrl}}/api/send
+Content-Type: application/json
+x-api-key: {{apiKey}}
+
+{
+  "phone": "905551234567",
+  "message": "Bu uzun bir test mesajıdır. WhatsApp API'miz 1000 karaktere kadar mesaj gönderebilir. Bu örnekte API'nin düzgün çalıştığını görmek için biraz daha uzun bir metin yazıyoruz."
+}
+
+###
+
+### 5. HATA - Geçersiz Telefon Formatı
+POST {{baseUrl}}/api/send
+Content-Type: application/json
+x-api-key: {{apiKey}}
+
+{
+  "phone": "+90 555 123 45 67",
+  "message": "Test"
+}
+
+###
+
+### 6. HATA - Boş Mesaj
+POST {{baseUrl}}/api/send
+Content-Type: application/json
+x-api-key: {{apiKey}}
+
+{
+  "phone": "905551234567",
+  "message": ""
+}
+
+###
+
+### 7. HATA - API Key Eksik
+POST {{baseUrl}}/api/send
+Content-Type: application/json
+
+{
+  "phone": "905551234567",
+  "message": "Test"
+}
+
+###
+
+### 8. HATA - Geçersiz API Key
+POST {{baseUrl}}/api/send
+Content-Type: application/json
+x-api-key: yanlis_anahtar
+
+{
+  "phone": "905551234567",
+  "message": "Test"
+}
+
+###
+
+### 9. HATA - Telefon Numarası Eksik
+POST {{baseUrl}}/api/send
+Content-Type: application/json
+x-api-key: {{apiKey}}
+
+{
+  "message": "Test mesajı"
+}
+
+###
+
+### 10. HATA - Mesaj Çok Uzun (>1000 karakter)
+POST {{baseUrl}}/api/send
+Content-Type: application/json
+x-api-key: {{apiKey}}
+
+{
+  "phone": "905551234567",
+  "message": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+}
+
+###
+

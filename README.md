@@ -49,8 +49,8 @@ cp env.example .env
 # Sunucu portu
 PORT=3000
 
-# API güvenlik anahtarı (mutlaka değiştirin!)
-API_KEY=gizli_anahtar_buraya
+# API güvenlik anahtarı 
+API_KEY=#
 
 # Rate limit ayarları
 RATE_LIMIT_WINDOW_MS=60000
